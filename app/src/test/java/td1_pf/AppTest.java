@@ -70,7 +70,16 @@ import java.util.Set;
             //f1.contient(v2);
             assertEquals(true,f1.contient(v1) );
         }
-
+        @Test public void testEntierValeurs(){
+            Entier v1 = new Entier(1);
+            Entier v2 = new Entier(2);
+            Arbre<Entier> f1 = new Feuille<>(v1);
+            Arbre<Entier> f2 = new Feuille<>(v2);
+            Arbre<Entier> n1 = new Noeud(List.of(f1,f2));
+            Set<Entier> n2 = Set.of(v1, v2);
+            assertEquals(n2,n1.valeurs());
+            //System.out.println(n1.valeurs());
+        }
         @Test public void testSize() {
             assertEquals(0, arbre0().taille());
             assertEquals(3, arbre1().taille());

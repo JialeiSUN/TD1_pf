@@ -33,7 +33,7 @@ public class Noeud<T> implements Arbre<T> {
     @Override
     public Set<T> valeurs() {
         Set<T> rtr = new HashSet<>();
-        for (final Arbre a : fils) {
+        for (final Arbre<T> a : fils) {
             rtr.addAll(a.valeurs());
         }
         return rtr;
