@@ -2,7 +2,7 @@ package td1_pf.arbres;
 
 import java.util.Set;
 
-public class Feuille<T> implements Arbre<T>{
+public class Feuille<T extends Sommable<T>> implements Arbre<T>{
     private T feuille;
     public Feuille(final T value){
         this.feuille = value;
@@ -21,12 +21,12 @@ public class Feuille<T> implements Arbre<T>{
     public Set<T> valeurs() {
         return Set.of(feuille);
     }
-/*
+
     @Override
     public T somme() {
         return feuille;
     }
-
+/*
     @Override
     public T min() {
         return feuille;

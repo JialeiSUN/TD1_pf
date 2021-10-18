@@ -50,6 +50,25 @@ import java.util.Set;
             assertEquals(n2,n1.valeurs());
             //System.out.println(n1.valeurs());
         }
-
+        @Test public void testEntierSommer(){
+            Entier v1 = new Entier(1);
+            Entier v2 = new Entier(2);
+            Entier v3 = new Entier(3);
+            Arbre<Entier> f1 = new Feuille<>(v1);
+            Arbre<Entier> f2 = new Feuille<>(v2);
+            Arbre<Entier> f3 = new Feuille<>(v3);
+            Arbre<Entier> n1 = new Noeud(List.of(f1,f2,f3));
+            assertEquals(6,n1.somme().getEntier());
+        }
+        @Test public void testChaineSommer(){
+            Chaine v1 = new Chaine("a");
+            Chaine v2 = new Chaine("b");
+            Chaine v3 = new Chaine("c");
+            Arbre<Chaine> f1 = new Feuille<>(v1);
+            Arbre<Chaine> f2 = new Feuille<>(v2);
+            Arbre<Chaine> f3 = new Feuille<>(v3);
+            Arbre<Chaine> n1 = new Noeud(List.of(f1,f2,f3));
+            assertEquals("abc",n1.somme().getChaine());
+        }
     }
 
