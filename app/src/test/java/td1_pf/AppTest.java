@@ -62,6 +62,14 @@ import java.util.Set;
 
             assertEquals(3, root.taille());
         }
+        @Test public void testContientEntier(){
+            Entier v1 = new Entier(1);
+            Entier v2 = new Entier(2);
+            Arbre<Entier> f1 = new Feuille<>(v1);
+            Arbre<Entier> f2 = new Feuille<>(v2);
+            //f1.contient(v2);
+            assertEquals(true,f1.contient(v1) );
+        }
 
         @Test public void testSize() {
             assertEquals(0, arbre0().taille());
