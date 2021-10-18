@@ -4,10 +4,7 @@
 package td1_pf;
 
 import org.junit.Test;
-import td1_pf.arbres.Arbre;
-import td1_pf.arbres.Entier;
-import td1_pf.arbres.Feuille;
-import td1_pf.arbres.Noeud;
+import td1_pf.arbres.*;
 
 import static org.junit.Assert.*;
 
@@ -47,12 +44,21 @@ import java.util.Set;
             final Arbre n2 = new Noeud(List.of(n1,f3));
             return n2;
         }
-        @Test public void testGenerique(){
+        @Test public void testEntier(){
             Arbre<Entier> v1 = new Feuille<>(new Entier(1));
             Arbre<Entier> v2 = new Feuille<>(new Entier(2));
             Arbre<Entier> n1 = new Noeud<>(List.of(v1,v2));
             Arbre<Entier> v3 = new Feuille<>(new Entier(3));
             Arbre<Entier> root = new Noeud<>(List.of(n1,v3));
+
+            assertEquals(3, root.taille());
+        }
+        @Test public void testChaine(){
+            Arbre<Chaine> v1 = new Feuille<>(new Chaine("a"));
+            Arbre<Chaine> v2 = new Feuille<>(new Chaine("b"));
+            Arbre<Chaine> n1 = new Noeud<>(List.of(v1,v2));
+            Arbre<Chaine> v3 = new Feuille<>(new Chaine("c"));
+            Arbre<Chaine> root = new Noeud<>(List.of(n1,v3));
 
             assertEquals(3, root.taille());
         }
