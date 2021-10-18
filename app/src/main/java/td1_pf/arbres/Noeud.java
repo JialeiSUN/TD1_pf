@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Noeud<T extends Sommable<T>> implements Arbre<T> {
+public class Noeud<T extends Sommable<T> &Comparable<T>> implements Arbre<T> {
 
     private final List<Arbre<T>> fils;
 
@@ -57,21 +57,7 @@ public class Noeud<T extends Sommable<T>> implements Arbre<T> {
         }
     }
 }
-   /* @Override
-    public Integer somme() {
-        if (fils == null || fils.size() == 0)
-            return null; // should it be 0 ? no because nothing to sum
-        // alternative without 0 initialization
-        // int rtr = fils.get(0).somme();
-        // for (int i = 1; i<fils.size(); i++) {
-        //     rtr += fils.get(i).somme();
-        // }
-        int rtr = 0;
-        for (Arbre a : fils) {
-            rtr += a.somme();
-        }
-        return rtr;
-    }
+/*
 
     @Override
     public Integer min() {

@@ -1,8 +1,7 @@
 package td1_pf.arbres;
 
-public class Entier implements Sommable<Entier> {
+public class Entier implements Sommable<Entier>, Comparable<Entier> {
     private int in;
-    private int racine;
     public Entier(int a){
         this.in = a;
     }
@@ -13,5 +12,15 @@ public class Entier implements Sommable<Entier> {
     public Entier sommer(Entier other) {
         this.in += other.getEntier();
         return this;
+    }
+
+    @Override
+    public Entier compareTo(Entier next) {
+        if(in<next.getEntier()){
+            return this;
+        }
+        else{
+            return  next;
+        }
     }
 }

@@ -2,7 +2,7 @@ package td1_pf.arbres;
 
 import java.util.Set;
 
-public class Feuille<T extends Sommable<T>> implements Arbre<T>{
+public class Feuille<T extends Sommable<T> & Comparable<T>> implements Arbre<T>{
     private T feuille;
     public Feuille(final T value){
         this.feuille = value;

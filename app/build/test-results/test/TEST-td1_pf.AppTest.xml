@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="td1_pf.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-18T15:04:49" hostname="DESKTOP-BDFMDCA" time="0.003">
+<testsuite name="td1_pf.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-18T15:13:32" hostname="DESKTOP-BDFMDCA" time="0.015">
   <properties/>
-  <testcase name="testEntierSommer2" classname="td1_pf.AppTest" time="0.003"/>
+  <testcase name="testChaineSommer" classname="td1_pf.AppTest" time="0.015"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
