@@ -2,9 +2,9 @@ package td1_pf.arbres;
 
 import java.util.Set;
 
-public class Feuille implements Arbre{
-    private int feuille;
-    public Feuille(final int value){
+public class Feuille<T> implements Arbre<T>{
+    private T feuille;
+    public Feuille(final T value){
         this.feuille = value;
     }
     @Override
@@ -13,32 +13,32 @@ public class Feuille implements Arbre{
     }
 
     @Override
-    public boolean contient(final Integer val) {
+    public boolean contient(final T val) {
         return val.equals(feuille);
     }
 
     @Override
-    public Set<Integer> valeurs() {
+    public Set<T> valeurs() {
         return Set.of(feuille);
     }
-
+/*
     @Override
-    public Integer somme() {
+    public T somme() {
         return feuille;
     }
 
     @Override
-    public Integer min() {
+    public T min() {
         return feuille;
     }
 
     @Override
-    public Integer max() {
+    public T max() {
         return feuille;
     }
 
     @Override
     public boolean estTrie() {
         return true;
-    }
+    }*/
 }

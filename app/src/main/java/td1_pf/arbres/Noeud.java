@@ -4,25 +4,25 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Noeud implements Arbre {
+public class Noeud<T> implements Arbre<T> {
 
-    private final List<Arbre> fils;
+    private final List<Arbre<T>> fils;
 
-    public Noeud(final List<Arbre> fils) {
+    public Noeud(final List<Arbre<T>> fils) {
         this.fils = fils;
     }
 
     @Override
     public int taille() {
         int rtr = 0;
-        for (final Arbre a : fils) {
+        for (final Arbre<T> a : fils) {
             rtr += a.taille();
         }
         return rtr;
     }
 
     @Override
-    public boolean contient(final Integer val) {
+    public boolean contient(final T val) {
         boolean rtr = false;
         for (final Arbre a : fils) {
             if (a.contient(val)) return true;
@@ -31,15 +31,15 @@ public class Noeud implements Arbre {
     }
 
     @Override
-    public Set<Integer> valeurs() {
-        Set<Integer> rtr = new HashSet<>();
+    public Set<T> valeurs() {
+        Set<T> rtr = new HashSet<>();
         for (final Arbre a : fils) {
             rtr.addAll(a.valeurs());
         }
         return rtr;
     }
-
-    @Override
+}
+   /* @Override
     public Integer somme() {
         if (fils == null || fils.size() == 0)
             return null; // should it be 0 ? no because nothing to sum
@@ -90,6 +90,7 @@ public class Noeud implements Arbre {
      * <li>&forall; i &in; 1..n-1, max(fi)<= min(fi+1)</li>
      * </ol>
      */
+    /*
     @Override
     public boolean estTrie() {
         return conditionTrie1() && conditionTrie2();
@@ -116,4 +117,4 @@ public class Noeud implements Arbre {
         return rtr;
     }
 
-}
+}*/
